@@ -11,6 +11,9 @@ public class KucnaHemija {
 	}
 
 	public void setRokTrajanja(Date rokTrajanja) {
+		if(rokTrajanja.before(new Date())) {
+			throw new IllegalArgumentException("Rok trajanja mora biti datum u buducnosti");
+		}
 		this.rokTrajanja = rokTrajanja;
 	}
 

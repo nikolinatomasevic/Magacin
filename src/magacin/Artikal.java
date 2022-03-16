@@ -24,18 +24,36 @@ public class Artikal {
 	}
 	
 	public void setNaziv(String naziv) {
+		if(naziv == null) {
+			throw new NullPointerException("Naziv ne sme biti null");
+		}
+		if(naziv.isEmpty()) {
+			throw new IllegalArgumentException("Naziv ne sme biti prazan String");
+		}
 		this.naziv = naziv;
 	}
 	
 	public void setSifra(int sifra) {
+		if(sifra<=0) {
+			throw new IllegalArgumentException("Sifra ne sme biti <=0");
+		}
 		this.sifra = sifra;
 	}
 	
 	public void setOpis(String opis) {
+		if(opis == null) {
+			throw new NullPointerException("Opis ne sme biti null");
+		}
+		if(opis.isEmpty()) {
+			throw new IllegalArgumentException("Opis ne sme biti prazan String");
+		}
 		this.opis = opis;
 	}
 	
 	public void setKolicina(int kolicina) {
+		if(kolicina<0) {
+			throw new IllegalArgumentException("Kolicina ne sme biti <0");
+		}
 		this.kolicina = kolicina;
 	}
 
