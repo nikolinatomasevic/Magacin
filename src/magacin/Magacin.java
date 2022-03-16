@@ -16,11 +16,8 @@ public class Magacin implements MagacinInterfejs {
 	@Override
 	public void dodajArtikal(Artikal artikal) {
 		if(artikli.contains(artikal)) {
-			for(Artikal a: artikli) {
-				if(a.equals(artikal)) {
-					a.setKolicina(a.getKolicina() + artikal.getKolicina());
-				}
-			}
+			Artikal a = pronadjiArtikal(artikal.getSifra());
+			a.setKolicina(a.getKolicina() + artikal.getKolicina());
 		}else {
 			artikli.add(artikal);
 		}
@@ -34,7 +31,6 @@ public class Magacin implements MagacinInterfejs {
 		}
 		Artikal a = pronadjiArtikal(artikal.getSifra());
 		a.setKolicina(a.getKolicina() - artikal.getKolicina());
-
 	}
 
 	@Override
