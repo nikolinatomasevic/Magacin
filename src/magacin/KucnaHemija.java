@@ -13,5 +13,12 @@ public class KucnaHemija {
 	public void setRokTrajanja(Date rokTrajanja) {
 		this.rokTrajanja = rokTrajanja;
 	}
+
+	@Override
+	public String toString() {
+		return "KucnaHemija [rokTrajanja=" + rokTrajanja + "]";
+	}
+	
+	
 	
 }
